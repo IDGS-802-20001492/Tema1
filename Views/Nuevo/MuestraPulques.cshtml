@@ -1,0 +1,29 @@
+﻿@model List<Temporal.Models.Pulques>
+
+@{
+    ViewBag.Title = "MuestraPulques";
+}
+
+<h2>MuestraPulques</h2>
+<div>
+    <table>
+        <thead>
+        <th>Producto</th>
+        <th>Descripción</th>
+        <th>Litros</th>
+        <th>Creación</th>
+        </thead>
+        <tbody>
+            @foreach(var pulque in Model)
+            {
+                <tr>
+                    <td>@pulque.Producto</td>
+                    <td>@pulque.Descripcion</td>
+                    <td>@pulque.Litros</td>
+                    <td>@pulque.Creacion</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

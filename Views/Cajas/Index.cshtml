@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cajas</h2>
+<form action="/" method="post">
+    <label>Ingresa el numero:</label>
+    <input type="number" name="num1" class="form-control" placeholder="N cajas" />
+    <input type="submit" value="Ejecutar" class="btn btn-primary my-3" />
+</form>
+   <form action="@Url.Action("Res", "Cajas")" method='post'>
+    @if (ViewBag.num1 != null)
+    {
+        var ids = new List<string>();
+
+        for (int i = 0; i < ViewBag.num1; i++)
+        {
+            <label>Campo @(i+1)</label>
+            <input type="number" name="ids[@i]" class="form-group my-1" /><br />
+        
+        }
+    }
+       <input type="submit" class="btn btn-success my-3" value="Calcular" />
+   </form>
+
+

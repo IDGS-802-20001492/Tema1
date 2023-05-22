@@ -1,0 +1,31 @@
+﻿@model Temporal.Models.Calculos
+
+@{
+    ViewBag.Title = "OperasBas2";
+}
+
+<h2>OperasBas2</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="/" method="post">
+                <label>
+                    Número 1:
+                </label>
+                <input type="text" name="num1" value="" />
+                <br />
+                <label>
+                    Número 2:
+                </label>
+                <input type="text" name="num2" value="" />
+                <br />
+                <input type="submit" value="Calcular" />
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <h1>El resultado es: @ViewBag.Res</h1>
+            <h1 class="text-info bg-dark text-center">El resultado es: @Html.DisplayFor(model=>model.Res)</h1>
+        </div>
+    </div>
+</div>
+

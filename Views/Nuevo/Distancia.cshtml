@@ -1,0 +1,40 @@
+﻿@model Temporal.Models.Distancia
+
+@{
+    ViewBag.Title = "Distancia";
+}
+
+<h2>Distancia</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="/" method="post">
+                <label>
+                    Punto X1:
+                </label>
+                <input type="text" name="x1" value="" />
+                <br />
+                <label>
+                    Punto X2:
+                </label>
+                <input type="text" name="x2" value="" />
+                <br />
+                <label>
+                    Punto Y1:
+                </label>
+                <input type="text" name="y1" value="" />
+                <br />
+                <label>
+                    Punto Y2:
+                </label>
+                <input type="text" name="y2" value="" />
+                <br />
+                <input type="submit" value="Calcular" />
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <h1>El resultado es: @ViewBag.Res</h1>
+        </div>
+    </div>
+</div>
+

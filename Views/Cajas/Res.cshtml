@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Res";
+}
+@{ 
+    if(ViewBag.Res != null)
+            {
+                <h1>La suma es: @ViewBag.Res</h1>
+
+                foreach(var r in ViewBag.repetidos)
+                {
+                <h3>@r</h3>
+                }
+    }
+}
+

@@ -1,0 +1,128 @@
+﻿@model Temporal.Models.Diccionario
+
+@{
+    ViewBag.Title = "Buscar";
+}
+<div class="row">
+    <div class="col-1">
+        <a style="height: 90%; margin:5px;" href="@Url.Action("Registrar","Diccionario")" class="bg-info btn btn-light">Regresar</a>
+    </div>
+    <div class="col-1">
+        <h2 style="margin:5px;" class="bg-light">Buscar</h2>
+    </div>
+</div>
+
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div style="padding:10px; box-shadow: 5px 5px grey; border-radius:10px;" class=" bg-light col-5 border boder-dark m-3">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.Label("Ingresa la palabra a buscar:", htmlAttributes:
+                   new
+                   {
+                       @class = "control-label h5 text-primary"
+                   }
+                   )
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.buscarPalabra, new
+               {
+                   htmlAttributes =
+                    new { @class = "form-control" }
+                })
+                </div>
+                
+                <div class="col-md-10">                                
+                    <div class="form-group">
+                        @Html.Label("Idioma a traducir:", htmlAttributes:
+                         new
+                        {
+                        @class = "control-label"
+                        })
+                        @Html.RadioButtonFor(model => model.selIdioma,"1", new
+                        {
+                          htmlAttributes =
+                          new { @class = "form-control", name = "selIdioma"}
+                        }) Español
+                        @Html.RadioButtonFor(model => model.selIdioma,"2", new
+                        {
+                       htmlAttributes =
+                          new { @class = "form-control", name = "selIdioma"}
+                   }) Inglés
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10 my-3">
+                        <input type="submit" name="name" value="Traducir" class="btn btn-info" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10 my-1">
+                        @Html.Label("Resultado:", htmlAttributes:
+                         new
+                         {
+                             @class = "control-label text-success"
+                         })
+                        <input type="text" readonly value="@ViewBag.res" placeholder="Resultado" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style=" box-shadow: 5px 5px grey; border-radius: 10px; height: 250px; overflow-y: auto;" class=" bg-info col-5 border boder-dark m-3">
+            <div class="row">
+                <div class="col-sm-6">
+                    <table class="table table-bordered my-3">
+                        <thead>
+                            <tr class="bg-dark">
+                                <th class="text-info">Inglés</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in ViewBag.pIngles)
+                            {
+                                <tr>
+                                    <td>
+                                        @foreach (var item2 in item.Split(','))
+                                        {
+                                        @item2
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-sm-6">
+                    <table class="table table-bordered my-3">
+                        <thead>
+                            <tr class="bg-dark">
+                                <th class="text-info">Español</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in ViewBag.pEspanol)
+                            {
+                                <tr>
+                                    <td>
+                                        @foreach(var item2 in item.Split(','))
+                                        {
+                                        @item2
+                                        }
+                                    </td>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+ }
+
+
+

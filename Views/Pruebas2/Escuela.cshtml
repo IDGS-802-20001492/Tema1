@@ -1,0 +1,24 @@
+﻿@model Temporal.Models.Alumnos
+@{
+    ViewBag.Title = "Escuela";
+}
+
+<h2>Escuela</h2>
+<div class="form-group">
+    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+    @Html.DisplayFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Email)
+    @Html.DisplayFor(model => model.Email)
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Activo)
+    @Html.DisplayFor(model => model.Activo)
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Inscripcion)
+    @Html.DisplayFor(model => model.Inscripcion)
+</div>

@@ -1,0 +1,44 @@
+﻿@model Temporal.Models.Diccionario
+
+@{
+    ViewBag.Title = "Registrar";
+}
+
+<h2>Diccionario ING-ESP</h2>
+@using (Html.BeginForm())
+{
+    <div style="border-radius: 10px; padding:5px; box-shadow:3px 2px rgb(0, 148, 255,0.5);" class="form-horizontal bg-light col-6 border border-1 border-info">
+        <div class="form-group">
+            @Html.Label("Inglés")
+
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.palabraIngles, new
+       {
+           htmlAttributes =
+
+           new { @class = "form-control" }
+
+        })
+        </div>
+        <div class="form-group">
+            @Html.Label("Español")
+
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.palabraEspanol, new
+       {
+           htmlAttributes =
+
+           new { @class = "form-control" }
+
+        })
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 my-3">
+                <input type="submit" name="name" value="Registrar" class="btn btn-info" />
+                <a href="@Url.Action("Buscar", "Diccionario")" class="btn btn-success">Buscar</a>
+            </div>
+        </div>
+    </div>
+}
