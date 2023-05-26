@@ -1,0 +1,103 @@
+﻿@model Temporal.Models.Triangulo
+
+@{
+    ViewBag.Title = "obtenerLados";
+}
+
+<h2>Obtener los lados</h2>
+
+@using (Html.BeginForm())
+{
+    <div style="border-radius: 10px; padding:5px; box-shadow:3px 2px rgb(0, 148, 255,0.5);" class="form-horizontal bg-light col-6 border border-1 border-info">
+        <div class="form-group">
+            @Html.Label("Lado A (X1)")
+
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.x1, new
+       {
+           htmlAttributes =
+
+           new { @class = "form-control" }
+
+        })
+        </div>
+        <div class="form-group">
+            @Html.Label("Lado A (Y1)")
+
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.y1, new
+       {
+           htmlAttributes =
+
+           new { @class = "form-control" }
+
+        })
+        </div>
+        <div class="form-group">
+            @Html.Label("Lado B (X2)")
+
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.x2, new
+       {
+           htmlAttributes =
+
+           new { @class = "form-control" }
+
+        })
+        </div>
+        <div class="form-group">
+            @Html.Label("Lado B (Y2)")
+
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.y2, new
+       {
+           htmlAttributes =
+
+           new { @class = "form-control" }
+
+        })
+        </div>
+        <div class="form-group">
+            @Html.Label("Lado C (X3)")
+
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.x3, new
+       {
+           htmlAttributes =
+
+           new { @class = "form-control" }
+
+        })
+        </div>
+        <div class="form-group">
+            @Html.Label("Lado C (Y3)")
+
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.y3, new
+       {
+           htmlAttributes =
+
+           new { @class = "form-control" }
+
+        })
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 my-3">
+                <input type="submit" name="name" value="Registrar" class="btn btn-info" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="my-2">
+                <b>Resultado: </b>
+                <textarea type="text" class="form-control" style="width:100%;" readonly>@ViewBag.tipo</textarea>
+            </div>
+        </div> 
+    </div>
+}
+
